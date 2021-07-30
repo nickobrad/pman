@@ -96,19 +96,25 @@ def main():
                     print('\n')
                     print("Account Name: ")
                     acc_name = input()
+                    for conts in Credentials.accountList:
+                        if conts.account_name == acc_name:
+                            print("Name already taken. Add another name!")
+                            print ("Account Name:...")
+                            acc_name = input()
+
                     print("Account Username: ")
                     acc_usrname = input()
                     print("Account Password: ")
                     print("Would you like us to create a password for you or would you like to use your own?")
                     print("Type in 1 to have us generate a password and 2 for you to use yours")
-                    code = int(input())
+                    code_p = int(input())
 
-                    if code == 1:
+                    if code_p == 1:
                         acc_pword = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(10))
                         new_Acc = Credentials(acc_name, acc_usrname, acc_pword)
                         save_account(new_Acc)
                         print(f"Your {acc_name} with password {acc_pword} has been created")
-                    elif code == 2:
+                    elif code_p == 2:
                         acc_pword = input()
                         new_Acc = Credentials(acc_name, acc_usrname, acc_pword)
                         save_account(new_Acc)
@@ -116,6 +122,24 @@ def main():
                     else:
                         print("Please choose a number either 1 or 2 to proceed")
 
-                    
+                elif code == 'sa':
+                    print(f"Thank you {u_name} for wanting to search. ")
+                    print("The search feature only works with account names.")
+                    print("Type in a valid account name and its details will be shown below:")
+                    searchTerm = input()
+                    if account_confirm(searchTerm):
+                        obtainedAcc = look_for_account(searchTerm)
+                        print("--"*20)
+                        print(f"The account {obtainedAcc.account_name} with password {obtainedAcc.account_password}")
+                    else:
+                        print("This account doesn't exist!")
+                
+                elif code == 'da':
+                    print(f"Hello {u_name}. Below is a list of your saved accounts")
+                    print("Use the account name to search for the account you would like to delete")
+                    for const in Credentials.accountList:
+                        print(f"Account Name: {const.account_name}")
+                        print(f"Account Password: {const.account_password}")
+                        print("--"*10)
 if __name__ == '__main__':
     main()
