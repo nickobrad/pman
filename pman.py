@@ -182,6 +182,7 @@ def main():
 
                         elif code == 'ex':
                             print("Good bye! Thank you!")
+                            print("Sign in again to use PMAN")
                             break
 
                         else:
