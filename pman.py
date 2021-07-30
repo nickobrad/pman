@@ -32,7 +32,7 @@ def save_account(account):
     '''
     Saves the new account
     '''
-    Credentials.create_account(account)
+    Credentials.save_account(account)
 
 def account_confirm(account):
     '''
