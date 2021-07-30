@@ -86,5 +86,21 @@ def main():
             if usr.username == userName & usr.password == passWord:
                 print(f"Welcome {usr.first_name}! What would you like to do?")
                 print("To add a new account type na, search for an account type sa and delete and account type da")
+                code = input().lower()
+
+                if code == 'na':
+                    print("Let's add your account credentials to PMAN")
+                    print('--'*20)
+                    print('\n')
+                    print("Account Name: ")
+                    acc_name = input()
+                    print("Account Username: ")
+                    acc_usrname = input()
+                    print("Account Password: ")
+                    print("Would you like us to create a password for you or would you like to use your own?")
+                    print("Type in 1 to have us generate a password and 2 for you to use yours")
+                    code = int(input())
+
+
 if __name__ == '__main__':
     main()
