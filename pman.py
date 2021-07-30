@@ -2,6 +2,8 @@
 
 from user_class import User
 from credentials_class import Credentials
+import random
+import string
 
 def create_user(first_name, second_name, username, password):
 
@@ -101,6 +103,15 @@ def main():
                     print("Type in 1 to have us generate a password and 2 for you to use yours")
                     code = int(input())
 
+                    if code == 1:
+                        acc_pword = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(10))
+                    elif code == 2:
+                        acc_pword = input()
+                    else:
+                        print("Please choose a number either 1 or 2 to proceed")
 
+                    new_Acc = Credentials(acc_name, acc_usrname, acc_pword)
+                    save_account(new_Acc)
+                    
 if __name__ == '__main__':
     main()
