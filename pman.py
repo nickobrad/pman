@@ -37,3 +37,9 @@ def look_for_account(account):
     Searches for an account
     '''
     Credentials.search_account(account)
+
+def remove_account(account):
+    '''
+    Deletes an account
+    '''
+    Credentials.delete_account(account)
