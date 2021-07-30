@@ -28,7 +28,7 @@ def create_account(account_name, account_username, account_password):
     '''
     newAccount = Credentials(account_name, account_username, account_password)
 
-def save_account(account):
+def add_account(account):
     '''
     Saves the new account
     '''
@@ -113,13 +113,13 @@ def main():
                             if code_p == 1:
                                 acc_pword = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(10))
                                 new_Acc = Credentials(acc_name, acc_usrname, acc_pword)
-                                save_account(new_Acc)
+                                add_account(new_Acc)
                                 print(f"Your {acc_name} with password {acc_pword} has been created")
                                 print('\n')
                             elif code_p == 2:
                                 acc_pword = input()
                                 new_Acc = Credentials(acc_name, acc_usrname, acc_pword)
-                                save_account(new_Acc)
+                                add_account(new_Acc)
                                 print(f"Your {acc_name} with password {acc_pword} has been created")
                                 print('\n')
                             else:
