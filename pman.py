@@ -126,17 +126,21 @@ def main():
                                 print("Please choose a number either 1 or 2 to proceed")
 
                         elif code == 'sa':
-                            print(f"Thank you {u_name} for wanting to search. ")
-                            print("The search feature only works with account names.")
-                            print("Type in a valid account name and its details will be shown below:")
-                            searchTerm = input()
-                            if account_confirm(searchTerm):
-                                obtainedAcc = look_for_account(searchTerm)
-                                print("--"*20)
-                                print(f"The account {obtainedAcc.account_name} with password {obtainedAcc.account_password}")
-                                print('\n')
+                            if len(Credentials.accountList) >= 1:
+                                print(f"Thank you {u_name} for wanting to search. ")
+                                print("The search feature only works with account names.")
+                                print("Type in a valid account name and its details will be shown below:")
+                                searchTerm = input()
+                                if account_confirm(searchTerm):
+                                    obtainedAcc = look_for_account(searchTerm)
+                                    print("--"*20)
+                                    print(f"The account {obtainedAcc.account_name} with password {obtainedAcc.account_password}")
+                                    print('\n')
+                                else:
+                                    print("This account doesn't exist!")
+                                    print('\n')
                             else:
-                                print("This account doesn't exist!")
+                                print("You have no accounts saved! Save some to see some.")
                                 print('\n')
                         
                         elif code =='sc':
@@ -146,6 +150,7 @@ def main():
                                 for conts in Credentials.accountList:
                                     print(f"Account Name: {conts.account_name} | Account Username: {conts.account_username} | Account Password: {conts.account_password}")
                                     print("--"*10)
+                                print('\n')
 
                             else:
                                 print("You have no accounts!")
