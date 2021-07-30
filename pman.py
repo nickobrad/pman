@@ -169,6 +169,8 @@ def main():
                             searchAccount = str(input())
                             if account_confirm(searchAccount):
                                 toBeDeleted = look_for_account(searchAccount)
+                                print(f"Your account with name {toBeDeleted.account_name} and username {toBeDeleted.account_username} has been deleted!")
+                                print("--" * 20)
                                 remove_account(toBeDeleted)
                                 print("Your new accounts list is: ")
                                 print("--"*10)
