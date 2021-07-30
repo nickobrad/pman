@@ -86,7 +86,7 @@ def main():
 
                 while True:
                     print(f"Welcome {usr.first_name}! What would you like to do?")
-                    print("To add a new account type na, search for an account type sa and delete and account type da and to exit type ex")
+                    print("To add a new account type na, search for an account type sa, show all accounts type sc, delete an account type da and to exit type ex")
                     code = input().lower()
 
                     if code == 'na':
@@ -133,6 +133,17 @@ def main():
                         else:
                             print("This account doesn't exist!")
                     
+                    elif code =='sc':
+                        print("Your saved accounts are: ")
+                        print('--'*20)
+                        if len(Credentials.accountList) >= 1:
+                            for conts in Credentials.accountList:
+                                print(f"Account Name: {conts.account_name} | Account Username: {conts.account_username} | Account Password: {conts.account_password}")
+                                print("--"*10)
+                                
+                        else:
+                            print("You have no accounts!")
+
                     elif code == 'da':
                         print(f"Hello {u_name}. Below is a list of your saved accounts")
                         print("Use the account name to search for the account you would like to delete")
