@@ -155,5 +155,8 @@ def main():
                 elif code == 'ex':
                     print("Good bye! Thank you!")
 
+                else:
+                    print("Please use a code to use the application!")
+
 if __name__ == '__main__':
     main()
