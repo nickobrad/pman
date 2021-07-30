@@ -154,10 +154,13 @@ def main():
                         elif code == 'da':
                             print(f"Hello {u_name}. Below is a list of your saved accounts")
                             print("Use the account name to search for the account you would like to delete")
+
                             for const in Credentials.accountList:
                                 print(f"Account Name: {const.account_name}")
                                 print(f"Account Password: {const.account_password}")
                                 print("--"*10)
+                            print('\n')
+                            print("TYpe in below the account you would like to delete.")    
                             searchAccount = input()
                             if account_confirm(searchAccount):
                                 toBeDeleted = look_for_account(searchAccount)
@@ -168,6 +171,9 @@ def main():
                                     print(f"Account Name: {const.account_name}")
                                     print(f"Account Password: {const.account_password}")
                                     print("--"*10)
+                            else:
+                                print("The Account you entered is not on the list. Please search for a valid account")
+                                print('\n')
 
                         elif code == 'ex':
                             print("Good bye! Thank you!")
