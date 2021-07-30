@@ -26,7 +26,7 @@ class Credentials:
         for acc in Credentials.accountList:
             if acc.username == text:
                 return True
-                
+
         return False
 
     def search_account(text):
@@ -36,3 +36,9 @@ class Credentials:
         for acc in Credentials.accountList:
             if acc.username == text:
                 return acc
+
+    def show():
+        '''
+        Shows all the accounts stored
+        '''
+        return Credentials.accountList
