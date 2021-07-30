@@ -105,13 +105,17 @@ def main():
 
                     if code == 1:
                         acc_pword = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(10))
+                        new_Acc = Credentials(acc_name, acc_usrname, acc_pword)
+                        save_account(new_Acc)
+                        print(f"Your {acc_name} with password {acc_pword} has been created")
                     elif code == 2:
                         acc_pword = input()
+                        new_Acc = Credentials(acc_name, acc_usrname, acc_pword)
+                        save_account(new_Acc)
+                        print(f"Your {acc_name} with password {acc_pword} has been created")
                     else:
                         print("Please choose a number either 1 or 2 to proceed")
 
-                    new_Acc = Credentials(acc_name, acc_usrname, acc_pword)
-                    save_account(new_Acc)
                     
 if __name__ == '__main__':
     main()
