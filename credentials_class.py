@@ -34,7 +34,7 @@ class Credentials:
         Searches for a specific account
         '''
         for acc in Credentials.accountList:
-            if acc.account_username == text:
+            if acc.account_name == text:
                 return acc
 
     def show():
