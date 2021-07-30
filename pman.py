@@ -87,7 +87,7 @@ def main():
         for usr in User.userCredentials:
             if usr.username == userName & usr.password == passWord:
                 print(f"Welcome {usr.first_name}! What would you like to do?")
-                print("To add a new account type na, search for an account type sa and delete and account type da")
+                print("To add a new account type na, search for an account type sa and delete and account type da and to exit type ex")
                 code = input().lower()
 
                 if code == 'na':
@@ -141,5 +141,19 @@ def main():
                         print(f"Account Name: {const.account_name}")
                         print(f"Account Password: {const.account_password}")
                         print("--"*10)
+                    searchAccount = input()
+                    if account_confirm(searchAccount):
+                        toBeDeleted = look_for_account(searchAccount)
+                        remove_account(toBeDeleted)
+                        print("Your new accounts list is: ")
+                        print("--"*10)
+                        for list in Credentials.accountList:
+                            print(f"Account Name: {const.account_name}")
+                            print(f"Account Password: {const.account_password}")
+                            print("--"*10)
+
+                elif code == 'ex':
+                    print("Good bye! Thank you!")
+
 if __name__ == '__main__':
     main()
