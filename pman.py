@@ -160,7 +160,7 @@ def main():
                                 print(f"Account Password: {const.account_password}")
                                 print("--"*10)
                             print('\n')
-                            print("TYpe in below the account you would like to delete.")    
+                            print("Type in below the account you would like to delete.")    
                             searchAccount = input()
                             if account_confirm(searchAccount):
                                 toBeDeleted = look_for_account(searchAccount)
@@ -168,8 +168,8 @@ def main():
                                 print("Your new accounts list is: ")
                                 print("--"*10)
                                 for list in Credentials.accountList:
-                                    print(f"Account Name: {const.account_name}")
-                                    print(f"Account Password: {const.account_password}")
+                                    print(f"Account Name: {list.account_name}")
+                                    print(f"Account Password: {list.account_password}")
                                     print("--"*10)
                             else:
                                 print("The Account you entered is not on the list. Please search for a valid account")
