@@ -53,5 +53,26 @@ def remove_account(account):
 def main():
     User.userCredentials = []
     Credentials.accountList = []
+
+    print("Welcome new user. Please input your details to create your account to start using PMAN.")
+    print('\n')
+
+    while True:
+    
+        print("First Name:...")
+        f_name = input()
+        print('\n')
+        print("Second Name:...")
+        s_name = input()
+        print('\n')
+        print("Your PMAN username:...")
+        print("Note that this is not your username for your individual accounts")
+        u_name = input()
+        print('\n')
+        print("Password:...")
+        pman_password = input()
+
+        new_user = User (f_name, s_name, u_name, pman_password)
+        user_save(new_user)
 if __name__ == '__main__':
     main()
