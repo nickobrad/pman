@@ -21,5 +21,13 @@ class TestPMAN(unittest.TestCase):
         self.acc.save_account()
         self.assertEqual(len(Credentials.accountList),1)
 
+    def test_user_exists(self):
+        self.user.save_user() 
+        fake_user = User ("aaa", "bbb", "ccc", "111")
+        fake_user.save_user()
+        user_lives = User.user_verification("ccc")
+        self.assertTrue(user_lives)
+
+
 if __name__ == '__main__':
     unittest.main()
