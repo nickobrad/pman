@@ -171,6 +171,7 @@ def main():
 
                         elif code == 'ex':
                             print("Good bye! Thank you!")
+                            break
 
                         else:
                             print("Please use a code to use the application!")
