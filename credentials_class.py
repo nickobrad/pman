@@ -17,4 +17,22 @@ class Credentials:
         '''
         Deletes a specific account credential
         '''
-        
+        Credentials.accountList.remove(self)
+
+    def account_verification(text):
+        '''
+        Verifies if the account is ready
+        '''
+        for acc in Credentials.accountList:
+            if acc.username == text:
+                return True
+                
+        return False
+
+    def search_account(text):
+        '''
+        Searches for a specific account
+        '''
+        for acc in Credentials.accountList:
+            if acc.username == text:
+                return acc
