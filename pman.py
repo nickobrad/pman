@@ -32,6 +32,12 @@ def save_account(account):
     '''
     Credentials.create_account(account)
 
+def account_confirm(account):
+    '''
+    Confirms that there's such an account
+    '''
+    Credentials.account_verification(account)
+
 def look_for_account(account):
     '''
     Searches for an account
@@ -43,3 +49,9 @@ def remove_account(account):
     Deletes an account
     '''
     Credentials.delete_account(account)
+
+def main():
+    User.userCredentials = []
+    Credentials.accountList = []
+if __name__ == '__main__':
+    main()
