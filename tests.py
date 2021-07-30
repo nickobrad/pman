@@ -35,6 +35,13 @@ class TestPMAN(unittest.TestCase):
         acc_lives = Credentials.account_verification("qqq")
         self.assertTrue(acc_lives)
 
+    def test_account_delete(self):
+        self.acc.save_account()
+        fake_acc = Credentials("qqq", "rrr", "222")
+        fake_acc.save_account()
+        self.acc.delete_account()
+        self.assertEqual(len(Credentials.accountList),1)
+
 
 if __name__ == '__main__':
     unittest.main()
