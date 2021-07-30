@@ -20,7 +20,7 @@ def user_confirm(user):
     '''
     Confirms if ther user exists
     '''
-    User.user_verification(user)
+    return User.user_verification(user)
 
 def create_account(account_name, account_username, account_password):
     '''
@@ -38,13 +38,13 @@ def account_confirm(account):
     '''
     Confirms that there's such an account
     '''
-    Credentials.account_verification(account)
+    return Credentials.account_verification(account)
 
 def look_for_account(account):
     '''
     Searches for an account
     '''
-    Credentials.search_account(account)
+    return Credentials.search_account(account)
 
 def remove_account(account):
     '''
@@ -130,7 +130,7 @@ def main():
                                 print(f"Thank you {u_name} for wanting to search. ")
                                 print("The search feature only works with account names.")
                                 print("Type in a valid account name and its details will be shown below:")
-                                searchTerm = input()
+                                searchTerm = str(input())
                                 if account_confirm(searchTerm):
                                     obtainedAcc = look_for_account(searchTerm)
                                     print("--"*20)
@@ -166,7 +166,7 @@ def main():
                                 print("--"*10)
                             print('\n')
                             print("Type in below the account you would like to delete.")    
-                            searchAccount = input()
+                            searchAccount = str(input())
                             if account_confirm(searchAccount):
                                 toBeDeleted = look_for_account(searchAccount)
                                 remove_account(toBeDeleted)
