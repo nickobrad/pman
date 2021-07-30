@@ -28,6 +28,13 @@ class TestPMAN(unittest.TestCase):
         user_lives = User.user_verification("ccc")
         self.assertTrue(user_lives)
 
+    def test_account_exists(self):
+        self.acc.save_account()
+        fake_acc = Credentials("qqq", "rrr", "222")
+        fake_acc.save_account()
+        acc_lives = Credentials.account_verification("qqq")
+        self.assertTrue(acc_lives)
+
 
 if __name__ == '__main__':
     unittest.main()
