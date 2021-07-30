@@ -7,7 +7,7 @@ class Credentials:
         self.account_username = account_username
         self.account_password = account_password
 
-    def create_account(self):
+    def save_account(self):
         '''
         Saves the new account credentials
         '''
