@@ -42,6 +42,12 @@ class TestPMAN(unittest.TestCase):
         self.acc.delete_account()
         self.assertEqual(len(Credentials.accountList),1)
 
-
+    def test_account_search(self):
+        self.acc.save_account()
+        fake_acc = Credentials("qqq", "rrr", "222")
+        fake_acc.save_account()
+        found_acc = Credentials.search_account("qqq")
+        self.assertEqual(found_acc.account_username, fake_acc.account_username)
+        
 if __name__ == '__main__':
     unittest.main()
