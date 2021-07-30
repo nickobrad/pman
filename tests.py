@@ -13,12 +13,13 @@ class TestPMAN(unittest.TestCase):
         self.acc = Credentials("guess", "guessyguess", "444")
 
     def test_save_user(self):
-        '''
-        test_save_contact test case to test if the contact object is saved into
-        the contact list
-        '''
-        self.user.save_user() # saving the new contact
+        self.user.save_user() 
         self.assertEqual(len(User.userCredentials),1)
+
+
+    def test_save_account(self):
+        self.acc.save_account()
+        self.assertEqual(len(Credentials.accountList),1)
 
 if __name__ == '__main__':
     unittest.main()
