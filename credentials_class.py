@@ -24,7 +24,7 @@ class Credentials:
         Verifies if the account is ready
         '''
         for acc in Credentials.accountList:
-            if acc.username == text:
+            if acc.account_username == text:
                 return True
 
         return False
