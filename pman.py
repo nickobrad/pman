@@ -159,6 +159,7 @@ def main():
 
             else:
                 print("Please use your username and password")
+                break
 
 if __name__ == '__main__':
     main()
